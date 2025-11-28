@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "8912c2e1-cfa2-4adc-9085-fb2e01874eeb",
+		"name": "Notification MicroService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42425812"
+	},
+	"item": [
+		{
+			"name": "findAllNotifications",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByNotificationId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg0ODE2LCJleHAiOjE3NDQyODg0MTZ9.ScDC0g9fjKmUu6mAMPCm2Z78ZregDPdXyou1qNxO7gY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/e5337b35-4b5c-46a6-ad9a-8426964ce29a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"e5337b35-4b5c-46a6-ad9a-8426964ce29a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNotification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": \"user1\",\r\n        \"appointmentId\":\"appointmwnt1\",\r\n        \"notificationType\": \"Appointment\",\r\n        \"status\": \"Pending\",\r\n        \"message\": \"Just for testing interview\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/notification/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteNotificationById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/delete/a38481cc-1496-4c08-84f0-06cac6a6bae1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"delete",
+						"a38481cc-1496-4c08-84f0-06cac6a6bae1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllNotifications",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0NTIxOTE3LCJleHAiOjE3NDQ2MDgzMTd9.zEfUE2zRhglL-Tg3D722WHNn1sSyZXqe0c_A-hhbBHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendReminders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/sendReminders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"sendReminders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTodayAppointments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuUHJhZ25hVm9sa292QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0RPQ1RPUiIsInVzZXJJZCI6ImYwYjk2NDBiLWZhN2MtNGFhMy05ZTFiLWZmZDYwMjU3MzFjYiIsImlhdCI6MTc0NDM0MjQ5MCwiZXhwIjoxNzQ0NDI4ODkwfQ.I28Gcj_Pr5sK5FJ2Hm8uZt8hPDepMBV9ViVciFqY08A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/getTodayAppointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"getTodayAppointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateNotificationById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentId\":\"appointmentId\",\r\n    \"userId\":\"user1\",\r\n    \"notificationType\": \"Reminder\",\r\n    \"status\": \"Sent\",\r\n    \"message\": \"Reminder: Your appointment is successfully completed. Please take your prescribed medication.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/notification/update/a38481cc-1496-4c08-84f0-06cac6a6bae1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"update",
+						"a38481cc-1496-4c08-84f0-06cac6a6bae1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPatientNotificationsByPatientId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/patientProfile/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"patientProfile",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDoctorNotificationsByDoctorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg0NTA3LCJleHAiOjE3NDQyODgxMDd9.3NppyBxQf-rQip57EUx53JsmrtAqcEoJ5fqS7cNco6c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/doctorProfile/ecec63d2-ef2e-4fba-a0f8-c15786f48aa5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"doctorProfile",
+						"ecec63d2-ef2e-4fba-a0f8-c15786f48aa5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "markNotificationAsRead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/markAsRead/8bfd12bb-4179-4efe-9d87-4048a2de688f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"markAsRead",
+						"8bfd12bb-4179-4efe-9d87-4048a2de688f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "markAllNotificationsAsReadByUserId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJvYkt1bWFyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiJkODJkNGRiMC1iZDcyLTQ1MDItOTgyZC00MWQ1ODMxODQ2ZjAiLCJpYXQiOjE3NDUyMzU0NDAsImV4cCI6MTc0NTMyMTg0MH0.SD5uBt407hl0ubFZnv2FQnYrAA6QsmHgH8dSMgK7Cso",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8087/notification/markAllAsRead/25ceecba-95b0-4074-9774-4f3fdb2fa40b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"notification",
+						"markAllAsRead",
+						"25ceecba-95b0-4074-9774-4f3fdb2fa40b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

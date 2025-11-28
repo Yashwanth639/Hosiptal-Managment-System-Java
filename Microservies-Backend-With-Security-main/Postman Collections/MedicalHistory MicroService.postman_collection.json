@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "1621cd2a-c78b-404d-8c64-26242450ccea",
+		"name": "MedicalHistory MicroService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42425812"
+	},
+	"item": [
+		{
+			"name": "addMedicalRecord",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlNlbGVuYVBhdGVsQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiIyZTQxOWRlYS1iYzQxLTQwNTQtYWQ3Yy01N2Y3ZGEzNGUzMjMiLCJpYXQiOjE3NDQ3NzkxMzMsImV4cCI6MTc0NDg2NTUzM30.iCOysAzujbxAx_uWVneslBWR9pfC1Jbjvw5CWoUctQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentId\": \"9979d97c-0110-466f-8537-8393e12f6c6b\",\r\n    \"medications\": \"Dolo\",\r\n    \"treatment\": \"Medicine and Rest\",\r\n    \"diagnosis\": \"Fever\",\r\n    \"bloodPressure\": \"120/80\",\r\n    \"heartRate\": \"72\",\r\n    \"temperature\": \"38.5\" // Assuming the temperature is in Celsius\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/medical-history/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMedicalHistory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMedicalHistoryById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/992449d3-2b4b-47ca-bbda-7a4f5d784d5e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"992449d3-2b4b-47ca-bbda-7a4f5d784d5e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMedicalHistory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentId\":\"0a0426f8-161b-4a26-816c-5b6a10b9edf7\",\r\n    \"diagnosis\": \"Fever\",\r\n    \"treatment\": \"Advised rest and hydration\",\r\n    \"medications\": \"Dolo 500mg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/medical-history/update/992449d3-2b4b-47ca-bbda-7a4f5d784d5e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"update",
+						"992449d3-2b4b-47ca-bbda-7a4f5d784d5e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteByHistoryId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/delete/89cd6751-d0e8-4326-824f-c6f14b171c15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"delete",
+						"89cd6751-d0e8-4326-824f-c6f14b171c15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllMedicalHistory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0NTIxOTE3LCJleHAiOjE3NDQ2MDgzMTd9.zEfUE2zRhglL-Tg3D722WHNn1sSyZXqe0c_A-hhbBHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMedicalHistoryByPatientId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/patient/ecb4ca9a-c1c0-44b6-a088-94cdcfc516c4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"patient",
+						"ecb4ca9a-c1c0-44b6-a088-94cdcfc516c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMedicalHistoryByDoctorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/doctor/220fd9ba-94fc-4486-b6cf-9445eb4f18fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"doctor",
+						"220fd9ba-94fc-4486-b6cf-9445eb4f18fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMedicalDetailsBetweenDoctorAndPatient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/between/220fd9ba-94fc-4486-b6cf-9445eb4f18fa/506a3751-529a-4a11-8e67-0a546a5a2779",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"between",
+						"220fd9ba-94fc-4486-b6cf-9445eb4f18fa",
+						"506a3751-529a-4a11-8e67-0a546a5a2779"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filterPatientMedicalDetailsWithinDateRange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0MzQ0MTEwLCJleHAiOjE3NDQ0MzA1MTB9.DD4-Yf_SY9ynEwodOEQjwS6cN5AFUBygdbTF-zWjZXc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/medical-history/filterByDate/2025-04-07/2025-04-11/506a3751-529a-4a11-8e67-0a546a5a2779",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"medical-history",
+						"filterByDate",
+						"2025-04-07",
+						"2025-04-11",
+						"506a3751-529a-4a11-8e67-0a546a5a2779"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

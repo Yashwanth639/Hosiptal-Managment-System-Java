@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "44a2fc22-b71d-427a-869b-2c33b190a91e",
+		"name": "Appointment MicroService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42425812"
+	},
+	"item": [
+		{
+			"name": "cancelAppointmentWithNotificationInsertion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/cancel/36397f32-d1d3-4526-b251-29c7e924f218",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"cancel",
+						"36397f32-d1d3-4526-b251-29c7e924f218"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookAppointmentWithNotificationInsertion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"appointmentDate\":\"2025-04-01\",\r\n    \"patientId\":\"1d5ad11b-644e-4088-acbb-a17331ff475f\",\r\n    \"doctorId\":\"d6f82936-1b48-4fc6-bc7e-f290bfe4d13e\",\r\n    \"session\":\"AN\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppointmentsUsingAppointmentDate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/date/2025-04-12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"date",
+						"2025-04-12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rescheduleAppointmentWithNotificationInsertion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentId\":\"d18ad64b-4853-4359-872d-7fc0651fdf51\",\r\n    \"doctorId\":\"d6f82936-1b48-4fc6-bc7e-f290bfe4d13e\",\r\n    \"newAppointmentDate\":\"2025-03-28\",\r\n    \"newSession\":\"FN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/reschedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"reschedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "completeAppointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/completeAppointment/a5b7cb8b-aba7-4026-9948-8964d9409503",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"completeAppointment",
+						"a5b7cb8b-aba7-4026-9948-8964d9409503"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAppointments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppointmentById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuUHJhZ25hVm9sa292QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0RPQ1RPUiIsInVzZXJJZCI6ImYwYjk2NDBiLWZhN2MtNGFhMy05ZTFiLWZmZDYwMjU3MzFjYiIsImlhdCI6MTc0NDM0MjQ5MCwiZXhwIjoxNzQ0NDI4ODkwfQ.I28Gcj_Pr5sK5FJ2Hm8uZt8hPDepMBV9ViVciFqY08A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/01efa62d-91fa-4343-83a0-f818fa4bdc61",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"01efa62d-91fa-4343-83a0-f818fa4bdc61"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAppointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"availabilityId\": \"1c67873d-2eb1-4422-814c-8a4c8bd66c57\",\r\n        \"doctorId\": \"ecec63d2-ef2e-4fba-a0f8-c15786f48aa5\",\r\n        \"patientId\": \"6fb60ad3-843a-49e9-a70e-abb4a2a9f993\",\r\n        \"appointmentDate\": \"2025-04-11\",\r\n        \"session\": \"FN\",\r\n        \"status\": \"SCHEDULED\",\r\n        \"specializationName\":\"Orthopedics\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAppointmentById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"doctorId\": \"9b41d2d5-32f3-40a7-8b70-12562a11e0db\",\r\n        \"patientId\": \"df26a385-8f97-45ad-ad8f-6adf4935a948\",\r\n        \"appointmentDate\": \"2025-04-23\",\r\n        \"appointmentId\":\"d907ef93-99e3-4f93-b699-ca06ffba482e\",\r\n        \"specializationId\":\"dfjghkj\",\r\n        \"session\": \"AN\",\r\n        \"status\": \"SCHEDULED\"\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/update/4e1f223d-08d8-4fdf-8328-08be0bd6f4b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"update",
+						"4e1f223d-08d8-4fdf-8328-08be0bd6f4b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAppointmentById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/delete/4e1f223d-08d8-4fdf-8328-08be0bd6f4b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"delete",
+						"4e1f223d-08d8-4fdf-8328-08be0bd6f4b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllAppointments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0NTIxOTE3LCJleHAiOjE3NDQ2MDgzMTd9.zEfUE2zRhglL-Tg3D722WHNn1sSyZXqe0c_A-hhbBHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppointmentByPatientId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Appointment ID</th>\r",
+							"        <th>Appointment Date</th>\r",
+							"        <th>Session</th>\r",
+							"        <th>Status</th>\r",
+							"        <th>Patient ID</th>\r",
+							"        <th>Doctor ID</th>\r",
+							"        <th>Specialization ID</th>\r",
+							"        <th>Patient Name</th>\r",
+							"        <th>Doctor Name</th>\r",
+							"        <th>Specialization Name</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{appointmentId}}</td>\r",
+							"            <td>{{appointmentDate}}</td>\r",
+							"            <td>{{session}}</td>\r",
+							"            <td>{{status}}</td>\r",
+							"            <td>{{patientId}}</td>\r",
+							"            <td>{{doctorId}}</td>\r",
+							"            <td>{{specializationId}}</td>\r",
+							"            <td>{{patientName}}</td>\r",
+							"            <td>{{doctorName}}</td>\r",
+							"            <td>{{specializationName}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/patient/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"patient",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppointmentByDoctorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/doctor/ecec63d2-ef2e-4fba-a0f8-c15786f48aa5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"doctor",
+						"ecec63d2-ef2e-4fba-a0f8-c15786f48aa5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filterAppointmentsByDateRange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuQ2FwQ2FsbGFoYW5AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiZWNlYzYzZDItZWYyZS00ZmJhLWEwZjgtYzE1Nzg2ZjQ4YWE1IiwiaWF0IjoxNzQ0Mjg4NTcyLCJleHAiOjE3NDQzNzQ5NzJ9.bOBRTRMd6wRmIyJ_jfE6SiKd-aRN__cNjwL0_GOTYTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8041/api/appointments/filter/2025-04-11/2025-04-16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8041",
+					"path": [
+						"api",
+						"appointments",
+						"filter",
+						"2025-04-11",
+						"2025-04-16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

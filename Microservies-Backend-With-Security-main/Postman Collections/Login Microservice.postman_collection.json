@@ -1,0 +1,1097 @@
+{
+	"info": {
+		"_postman_id": "ccdba99c-c63f-4235-84b7-ceebaf25f076",
+		"name": "Login Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42425812"
+	},
+	"item": [
+		{
+			"name": "patientRegistration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleId\": \"75403530-e63e-43a9-98dd-bb38cb47186f\",\r\n    \"email\": \"patient.SelenaPatel@gmail.com\",\r\n    \"passwordHash\": \"SelenaPatel#23\",\r\n    \"name\": \"Selena Patel\",\r\n    \"dateOfBirth\": \"2022-05-31\",\r\n    \"contactDetails\": \"124496400032\",\r\n    \"gender\":\"Female\",\r\n    \"heightInCm\":187,\r\n    \"weightInKg\":60\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/users/register/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"register",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doctorRegistration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleId\": \"a5026248-60f1-4010-8107-0322a2af8323\",\r\n    \"email\": \"doctor.KumbhKaran1@gmail.com\",\r\n    \"passwordHash\": \"KumbhKaran#23\",\r\n    \"doctorName\": \"Kumbh Karan\",\r\n    \"specializationId\":\"09d8497f-7bbd-4145-812a-28d790b2f107\",\r\n    \"contactDetails\": \"936474046848884\",\r\n    \"gender\":\"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/users/register/doctor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"register",
+						"doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"patient.SelenaPatel@gmail.com\",\r\n    \"passwordHash\":\"SelenaPatel#23\",\r\n    \"role\": {\r\n        \"roleName\": \"ROLE_PATIENT\"\r\n    }\r\n}\r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPatients",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3IuSGVsYU9kaW5zb25AZ21haWwuY29tIiwicm9sZSI6IlJPTEVfRE9DVE9SIiwidXNlcklkIjoiMjIwZmQ5YmEtOTRmYy00NDg2LWI2Y2YtOTQ0NWViNGYxOGZhIiwiaWF0IjoxNzQ0NTE1ODk2LCJleHAiOjE3NDQ2MDIyOTZ9.i1MT767Xp7_dIYnyfwl23Ke0tWr2JGYV0YNFHue3k4E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPatientByName",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/name/Chauhan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"name",
+						"Chauhan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePatientById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlNlbGVuYVBhdGVsQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiIyZTQxOWRlYS1iYzQxLTQwNTQtYWQ3Yy01N2Y3ZGEzNGUzMjMiLCJpYXQiOjE3NDQ3NzkxMzMsImV4cCI6MTc0NDg2NTUzM30.iCOysAzujbxAx_uWVneslBWR9pfC1Jbjvw5CWoUctQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Selena Gomez Patel\",\r\n    \"dateOfBirth\": \"1990-10-24\",\r\n    \"contactDetails\": \"5555555523\",\r\n    \"gender\":\"Female\",\r\n    \"heightInCm\":\"192\",\r\n    \"weightInKg\":72\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/patients/update/2e419dea-bc41-4054-ad7c-57f7da34e323",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"update",
+						"2e419dea-bc41-4054-ad7c-57f7da34e323"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPatientById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePatientById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/delete/abe40a43-343b-4e1b-adb3-bc90377edece",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"delete",
+						"abe40a43-343b-4e1b-adb3-bc90377edece"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllPatients",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlJhZ2hhdkJlaWJlckBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9ET0NUT1IiLCJ1c2VySWQiOiJjZGI5OGVhNS1kYzQyLTQyZWUtOGY1ZS1kNmNlZjQyNGM1NTAiLCJpYXQiOjE3NDQyNzU1MjgsImV4cCI6MTc0NDI3OTEyOH0.pWJXPICFqpwS2WgufUwtwB9JjVyWd-VO_P98cl2IpWw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/users/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/users/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"roleId\": \"2d0865e8-81b9-47ae-9fcf-75bce896e63b\",\r\n        \"email\": \"user63@example.com\",\r\n        \"passwordHash\": \"Hashed#password23\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ali6767ce.johnson@example.com\",\r\n    \"passwordHash\": \"Hashed#password23\",\r\n    \"roleId\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/users/update/c3c78365-2147-4e77-85cf-c249c468b4a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"update",
+						"c3c78365-2147-4e77-85cf-c249c468b4a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteuserById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODE2NzgsImV4cCI6MTc0NDI4NTI3OH0.I3vSp7bhNlB7ES_Hp5C_iQagNiFfH4v7p_e9-aHMEqs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/users/delete/c3c78365-2147-4e77-85cf-c249c468b4a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"delete",
+						"c3c78365-2147-4e77-85cf-c249c468b4a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlJhZ2hhdkJlaWJlckBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9ET0NUT1IiLCJ1c2VySWQiOiJjZGI5OGVhNS1kYzQyLTQyZWUtOGY1ZS1kNmNlZjQyNGM1NTAiLCJpYXQiOjE3NDQyNzU1MjgsImV4cCI6MTc0NDI3OTEyOH0.pWJXPICFqpwS2WgufUwtwB9JjVyWd-VO_P98cl2IpWw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/users/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"users",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookAppointmentByPatient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlNlbGVuYVBhdGVsQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiIyZTQxOWRlYS1iYzQxLTQwNTQtYWQ3Yy01N2Y3ZGEzNGUzMjMiLCJpYXQiOjE3NDQ3NzkxMzMsImV4cCI6MTc0NDg2NTUzM30.iCOysAzujbxAx_uWVneslBWR9pfC1Jbjvw5CWoUctQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentDate\":\"2025-04-17\",\r\n    \"patientId\":\"2e419dea-bc41-4054-ad7c-57f7da34e323\",\r\n    \"doctorId\":\"04c08f0d-9772-44d4-8183-f9e8aeb4bb45\",\r\n    \"session\":\"FN\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/patients/bookAppointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"bookAppointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rescheduleAppointmentByPatient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlNlbGVuYVBhdGVsQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiIyZTQxOWRlYS1iYzQxLTQwNTQtYWQ3Yy01N2Y3ZGEzNGUzMjMiLCJpYXQiOjE3NDQ3NzkxMzMsImV4cCI6MTc0NDg2NTUzM30.iCOysAzujbxAx_uWVneslBWR9pfC1Jbjvw5CWoUctQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentId\":\"79d7597a-e65b-47f1-a6bb-63e05fad57db\",\r\n    \"doctorId\":\"04c08f0d-9772-44d4-8183-f9e8aeb4bb45\",\r\n    \"newAppointmentDate\":\"2025-04-25\",\r\n    \"newSession\":\"AN\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/patients/rescheduleAppointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"rescheduleAppointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelAppointmentByPatient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LlNlbGVuYVBhdGVsQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiIyZTQxOWRlYS1iYzQxLTQwNTQtYWQ3Yy01N2Y3ZGEzNGUzMjMiLCJpYXQiOjE3NDQ3NzkxMzMsImV4cCI6MTc0NDg2NTUzM30.iCOysAzujbxAx_uWVneslBWR9pfC1Jbjvw5CWoUctQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/cancelAppointment/79d7597a-e65b-47f1-a6bb-63e05fad57db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"cancelAppointment",
+						"79d7597a-e65b-47f1-a6bb-63e05fad57db"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRoles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/role/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRoleById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/role/id/2d0865e8-81b9-47ae-9fcf-75bce896e63b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"id",
+						"2d0865e8-81b9-47ae-9fcf-75bce896e63b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRoleByName",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/role/name/ROLE_PATIENT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"name",
+						"ROLE_PATIENT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addRole",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleName\":\"manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/role/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRole",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleName\":\"surgery\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/role/update/8608f4a4-0476-44a8-a7bc-2ada3922213d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"update",
+						"8608f4a4-0476-44a8-a7bc-2ada3922213d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRoleById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/role/delete/8608f4a4-0476-44a8-a7bc-2ada3922213d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"delete",
+						"8608f4a4-0476-44a8-a7bc-2ada3922213d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllRoles",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/role/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"role",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCurrentPatientAppointments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/current/patient/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"current",
+						"patient",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAppointmentByPatientId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/appointment/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"appointment",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPastAppointmentByPatientId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/past/patient/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"past",
+						"patient",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMedicalRecordsByPatientId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/medicalHistory/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"medicalHistory",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableDoctorsForBookingAppointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/availableDoctors/Neurology/2025-04-23/FN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"availableDoctors",
+						"Neurology",
+						"2025-04-23",
+						"FN"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPatientNotificationsById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/notifications/6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"notifications",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "markPatientNotificationAsRead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/notifications/markAsRead/58f275e0-54e5-465c-b4b4-a9af50e948bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"notifications",
+						"markAsRead",
+						"58f275e0-54e5-465c-b4b4-a9af50e948bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filterPatientAppointmentsByDateRange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50LkJhbnRpS3VtYXJDaGF1aGFuQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX1BBVElFTlQiLCJ1c2VySWQiOiI2ZmI2MGFkMy04NDNhLTQ5ZTktYTcwZS1hYmI0YTJhOWY5OTMiLCJpYXQiOjE3NDQyODI2MjcsImV4cCI6MTc0NDI4NjIyN30.Ml9enb1kjIOZptJhBhkJF0x1PtkCBvvvdl3Inj3EgyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/patients/filterAppointmentsByDate/2025-04-04/2025-04-30/6fb60ad3-843a-49e9-a70e-abb4a2a9f993/CANCELLED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"patients",
+						"filterAppointmentsByDate",
+						"2025-04-04",
+						"2025-04-30",
+						"6fb60ad3-843a-49e9-a70e-abb4a2a9f993",
+						"CANCELLED"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
