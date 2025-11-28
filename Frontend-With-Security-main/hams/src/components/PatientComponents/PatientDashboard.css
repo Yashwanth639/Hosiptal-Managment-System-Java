@@ -1,0 +1,166 @@
+/* PatientDashboard.css */
+
+.patient-dashboard {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-dashboard-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.calendar-card,
+.selected-appointments,
+.appointments-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.calendar-card:hover,
+.selected-appointments:hover,
+.appointments-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-card h3,
+.selected-appointments h4,
+.appointments-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+.react-calendar__tile {
+  padding: 10px;
+  text-align: center;
+}
+
+.react-calendar__tile--now {
+  background: #e6f7ff;
+}
+
+.react-calendar__tile--active {
+  background: #007bff;
+  color: white;
+}
+
+.appointment-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+  margin: 5px auto;
+}
+
+.appointment-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.3s ease;
+}
+
+.appointment-item:hover {
+  background-color: #f0f0f0;
+}
+
+.appointment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.specialization,
+.date-time,
+.status {
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.next-appointment {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.next-appointment p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.next-appointment strong {
+  color: #007bff;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Chart Styles */
+.appointments-card canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.welcome-message {
+   /* Makes the text bold */
+  font-size: 1em; /* Sets a large font size (2 times the default) */
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.3s ease;
+}

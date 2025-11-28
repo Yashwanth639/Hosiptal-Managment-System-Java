@@ -1,0 +1,258 @@
+/* DynamicDoctorAppointment.css (Enhanced and Consolidated Styles) */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.book-appointment-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  flex: 1;
+  background-color: #f9f9f9;
+}
+
+.book-appointment-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  width: 95%;
+  max-width: 600px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.book-appointment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.book-appointment-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #34495e;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.form-group select,
+.form-group input[type='text'] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1.1em;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #f8f8f8;
+}
+
+.form-group select:focus,
+.form-group input[type='text']:focus {
+  border-color: #4299e1;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-button,
+.dashboard-button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.book-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-button {
+  background-color: #90a4ae;
+  color: white;
+}
+
+.dashboard-button:hover {
+  background-color: #78909c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error-message,
+.success-message {
+  text-align: center;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.error-message {
+  background-color: #ffebf0;
+  color: #b00020;
+  border: 1px solid #f4caca;
+}
+
+.success-message {
+  background-color: #e6f4e5;
+  color: #00701a;
+  border: 1px solid #b7e1cd;
+}
+
+.availability-popup.compact {
+  min-width: auto;
+  width: 95%;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.availability-popup.compact h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.availability-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 6px;
+  min-height: 50px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.availability-slot.available {
+  background-color: #e6f4e5;
+  color: #00701a;
+}
+
+.availability-slot.available:hover {
+  background-color: #b7e1cd;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.availability-slot.unavailable {
+  background-color: #f8d7da;
+  color: #721c24;
+  cursor: not-allowed;
+}
+
+.availability-slot .day-of-week {
+  font-size: 0.8em;
+  color: #555;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.availability-slot .date-number {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.session-indicator.dynamic {
+  background-color: #4299e1;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.popup-actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #7f8c8d;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-left: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.popup-actions button:hover {
+  background-color: #6c7a7d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.view-availability{
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.view-availability:hover{
+  background-color: #0056b3;
+}

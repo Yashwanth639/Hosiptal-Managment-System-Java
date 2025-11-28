@@ -1,0 +1,190 @@
+/* DoctorPastAppointments.css */
+
+.container {
+    width: 90%; /* Increased width for larger screens */
+    margin: 20px auto; /* Added margin for spacing */
+    padding: 25px; /* Slightly increased padding */
+    background-color: #ffffff; /* Consistent background color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    border-radius: 12px; /* More rounded corners */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px; /* Added max-width for very large screens */
+}
+
+h1 {
+    color: #2c3e50; /* Darker heading color (consistent) */
+    margin-bottom: 30px; /* Increased margin */
+    font-size: 2.5em; /* Larger heading */
+    text-align: center;
+    font-weight: 600; /* Stronger font weight */
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap */
+    margin-bottom: 30px; /* Increased margin */
+    align-items: center;
+}
+
+.filter-container label {
+    font-weight: 600; /* Stronger label font */
+    color: #444; /* Darker label color */
+    margin-right: 10px;
+    font-size: 1.1em; /* Slightly larger label */
+}
+
+.filter-container input[type="date"] {
+    padding: 12px; /* Increased padding */
+    border: 1px solid #d1d8dd; /* Refined border color */
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1.1em; /* Slightly larger input text */
+    color: #495057;
+    width: 200px; /* Added width to input */
+    transition: border-color 0.3s ease; /* Smooth transition */
+    outline: none;
+    background-color: #f8fafc;
+}
+
+.filter-container input[type="date"]:focus {
+    border-color: #4299e1; /* Highlight on focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on focus */
+}
+
+
+.filter-container button {
+    padding: 12px 25px; /* Increased padding */
+    background-color: #4299e1; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1.1em; /* Slightly larger button text */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added shadow transition */
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.filter-container button:hover {
+    background-color: #3182ce; /* Darker shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow on hover*/
+}
+
+.filter-container button:active {
+    background-color: #2a69ac;
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width */
+    gap: 30px; /* Increased gap */
+    margin-top: 30px; /* Increased margin */
+}
+
+.appointment-card {
+    background-color: #f8fafc; /* Very light background for cards */
+    border: 1px solid #e2e8f0; /* Lighter border */
+    border-radius: 12px; /* More rounded corners */
+    padding: 20px; /* Increased padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    line-height: 1.7; /* Improved line height */
+}
+
+.appointment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card p {
+    margin: 10px 0; /* Increased margin */
+    font-size: 1.1em; /* Slightly larger font */
+    color: #555; /* Darker text */
+}
+
+.appointment-card strong {
+    font-weight: 600; /* Stronger font weight */
+    color: #2d3748; /* Even darker font for strong */
+}
+
+.view-medical-history-link {
+    margin-top: 15px; /* Increased margin */
+    padding: 12px 20px; /* Increased padding */
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    font-size: 1.1em; /* Slightly larger font */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added box-shadow */
+    text-decoration: none;
+    display: inline-block;
+    background-color: #63b3ed; /* Updated button color */
+    color: white;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.view-medical-history-link:hover {
+    background-color: #3182ce; /* Darker shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-medical-history-link:active {
+    background-color: #2a69ac;
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-container input[type="date"],
+    .filter-container button {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .appointments-container {
+        grid-template-columns: 1fr;
+    }
+      h1{
+        font-size: 2em;
+    }
+}
+
+/* Added for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .appointment-card{
+        padding: 15px;
+    }
+    .appointment-card p{
+        font-size: 0.95em;
+    }
+     .filter-container label{
+        font-size: 1em;
+    }
+    .filter-container input[type="date"], .filter-container button{
+        font-size: 1em;
+         padding: 10px;
+    }
+    h1{
+        font-size: 1.8em;
+    }
+}

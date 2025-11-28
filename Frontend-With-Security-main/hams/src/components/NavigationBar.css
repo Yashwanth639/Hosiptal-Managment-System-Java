@@ -1,0 +1,213 @@
+/* NavigationBar.css */
+.nav {
+    background-color: #008080;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link, .logout-button {
+    margin-right: 25px;
+    text-decoration: none;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 6px;
+    padding: 12px 18px;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.icon-container-nav, .profile-icon, .notification-icon {
+    position: relative;
+    margin-right: 25px;
+}
+
+.icon-nav, .user-icon {
+    width: 26px;
+    height: 26px;
+    fill: white;
+    cursor: pointer;
+}
+
+.icon-nav:hover, .user-icon:hover {
+    fill: #e0e0e0;
+}
+
+.details-popup-nav, .profile-details-expanded {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    margin-top: 12px;
+    right: 0;
+    width: 320px;
+    border-radius: 10px;
+    color: #333;
+    left: unset; /* changed from right: 0 to left: unset */
+}
+
+.details-popup-nav h2, .profile-details-expanded h2 {
+    margin-bottom: 12px;
+    font-size: 1.3em;
+}
+
+.details-popup-nav p, .profile-details-expanded p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.detail-label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.edit-profile-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 18px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+    background-color: #0056b3;
+}
+
+.notification-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 9px;
+    font-size: 13px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+.appointments-dropdown-container {
+    position: relative;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 12px 18px;
+    color: white;
+    font-size: 16px;
+}
+
+.appointments-dropdown {
+    position: absolute;
+    background-color: #008080;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-top: 8px;
+    right: 0;
+    min-width: 220px;
+    border-radius: 10px;
+    padding: 10px 0;
+    color: white;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.notification-loading-nav, .profile-loading-nav, .notification-error-nav, .error-message {
+    color: #f00;
+    padding: 12px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.circular-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.circular-icon {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+}
+
+.circular-icon-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification Icon Styles for NavigationBar */
+.notification-icon-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notification-bell-icon {
+    width: 26px;
+    height: 26px;
+    fill: white;
+}
+
+.unread-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 9px;
+    font-size: 13px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 11;
+}

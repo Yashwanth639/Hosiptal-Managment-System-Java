@@ -1,0 +1,138 @@
+/* EditProfile.css */
+
+.edit-profile-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.edit-profile-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2em;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.edit-profile-form button {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.edit-profile-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-profile-form button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.edit-profile-form button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.edit-profile-form button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+.edit-profile-form button[type="button"]:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.success-message {
+  color: #43a047;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.loading-spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.button-group { /* Added for button layout */
+  display: flex;
+  justify-content: flex-end; /* Push buttons to the right */
+  gap: 10px; /* Add some horizontal space between buttons */
+  margin-top: 20px;
+}

@@ -1,0 +1,181 @@
+/* MedicalHistoryFormPopup.css (Consistent Styles) */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to flex-start to position at the top initially */
+  z-index: 1000;
+  overflow-y: auto; /* Added to handle very tall forms on small screens */
+  padding-top: 60px; /* Add padding to move content below fixed header/nav - ADJUST AS NEEDED */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
+  margin-top: 80px; /* Add margin-top to create space below fixed header/nav - ADJUST AS NEEDED */
+  max-height: 80vh; /* Ensure content doesn't overflow viewport */
+  overflow-y: auto;  /* Add scrollbar if content overflows */
+}
+
+.popup-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 12px;
+  color: #34495e;
+  font-weight: 600;
+  font-size: 1.1em;
+  display: block;
+}
+
+input,
+textarea {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1.1em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4299e1;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"],
+button[type="button"] {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2px 5px rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+  display: inline-block;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button[type="button"] {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #6c7a7d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  text-align: left;
+  background-color: #fff5f5;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #fed7d7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .popup-content {
+      padding: 20px;
+  }
+
+  .popup-content h2 {
+      font-size: 1.6em;
+  }
+
+  label {
+      font-size: 1em;
+  }
+
+  input,
+  textarea {
+      font-size: 1em;
+      padding: 10px;
+  }
+
+  button[type="submit"],
+  button[type="button"] {
+      font-size: 1em;
+      padding: 10px 18px;
+  }
+}
+
+/* Added for very small screens */
+@media (max-width: 480px) {
+  .popup-content {
+      padding: 15px;
+  }
+
+  .popup-content h2 {
+      font-size: 1.4em;
+  }
+
+  label {
+      font-size: 0.95em;
+  }
+
+  input,
+  textarea {
+      font-size: 0.95em;
+      padding: 8px;
+  }
+
+  button[type="submit"],
+  button[type="button"] {
+      font-size: 0.95em;
+      padding: 10px 16px;
+  }
+  .error-message{
+      font-size: 0.85em;
+      padding: 8px;
+  }
+}

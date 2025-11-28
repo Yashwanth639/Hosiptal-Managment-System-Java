@@ -1,0 +1,136 @@
+/* Footer.css */
+.app-footer {
+  background-color: #008080; /* Teal color, same as header */
+  color: white;
+  padding: 25px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 50px; /* Added margin-top */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Space between content sections */
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-copyright {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #e0f7fa;
+}
+
+.footer-social-links {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.footer-social-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px; /* Increased horizontal margin, same as header */
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-size: 1.1em; /* Matched font size with header */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.footer-social-link:hover {
+  color: #e0f7fa;
+  transform: translateY(-2px);
+}
+
+.footer-social-link i {
+  margin: 0;
+}
+
+.footer-separator {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.1em; /* Matched separator size with header's nav links */
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer-contact-info p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #e0f7fa;
+}
+
+.footer-contact-info a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-contact-info a:hover {
+  text-decoration: underline;
+  color: #e0f7fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      align-items: flex-start; /* Aligned items to the start on small screens */
+  }
+
+  .footer-social-links {
+      margin-top: 15px;
+      justify-content: center; /* Center social links on small screens */
+  }
+  .footer-social-link {
+      margin-left: 15px; /* Reduced margin for social links on small screens*/
+      margin-right: 15px;
+  }
+  .footer-copyright {
+      font-size: 0.9em;
+      text-align: center; /* center the text*/
+  }
+  .footer-contact-info p {
+      font-size: 0.9em;
+      text-align: center; /* center the text */
+  }
+  .footer-separator{
+      display: none; /* hide separator*/
+  }
+}
+
+/* Added for very small screens */
+@media (max-width: 480px) {
+  .footer-content {
+      padding: 20px 10px;
+  }
+
+  .footer-social-link {
+      font-size: 1em;
+      width: 25px;
+      height: 25px;
+      margin-left: 10px; /* Reduced margin for social links on very small screens */
+      margin-right: 10px;
+  }
+
+  .footer-copyright {
+      font-size: 0.85em;
+  }
+
+  .footer-contact-info p {
+      font-size: 0.85em;
+  }
+}

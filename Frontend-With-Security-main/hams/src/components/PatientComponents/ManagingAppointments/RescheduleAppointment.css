@@ -1,0 +1,239 @@
+/* RescheduleAppointment.css (Enhanced with Moderate Red and Green) */
+.reschedule-appointment-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button.view-availability {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.view-availability:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-group {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.button-group button {
+    background-color: #2ecc71;
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-group button:hover {
+    background-color: #27ae60;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-group button:disabled {
+    background-color: #d3d3d3;
+    color: #777;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.success-message {
+    color: #27ae60;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    background-color: #d4edda;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.error-message {
+    color: #c0392b;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    background-color: #f8d7da;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Availability Popup Styles (Enhanced with Moderate Red and Green) */
+.availability-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.availability-popup h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.availability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.availability-slot {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.availability-slot.available {
+    background-color: #8bc34a;
+    color: #fff;
+}
+
+.availability-slot.available:hover {
+    background-color: #689f38;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.availability-slot.unavailable {
+    background-color: #e57373;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.day-of-week {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 3px;
+    color: #555;
+}
+
+.date-number {
+    display: block;
+    color: #333;
+}
+
+.session-indicator {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #3498db;
+}
+
+.availability-popup .popup-actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.availability-popup .popup-actions button {
+    background-color: #7f8c8d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.availability-popup .popup-actions button:hover {
+    background-color: #6c7a7d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.compact .availability-grid {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+}
+
+.compact .availability-slot {
+    padding: 6px;
+    font-size: 0.8em;
+}
+
+.compact .day-of-week {
+    font-size: 0.7em;
+    margin-bottom: 2px;
+}
+
+.compact .date-number {
+    font-size: 0.8em;
+}
+
+.compact .session-indicator {
+    font-size: 0.7em;
+    margin-top: 3px;
+}
